@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { CAL_SETUP_LINK, TALLY_FORM_ID } from '../config/site';
+import { CAL_SETUP_LINK } from '../config/site';
 ---
 
 <Layout
@@ -25,29 +25,15 @@ import { CAL_SETUP_LINK, TALLY_FORM_ID } from '../config/site';
         Johannes will reach out within 24 hours. To get started faster, fill in the intake form below — it takes 5 minutes and means your CLAUDE.md is already being drafted before the call.
       </p>
 
-      <!-- Step 1: Intake form -->
+      <!-- Step 1: Intake confirmation -->
       <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 mb-6 text-left">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-7 h-7 rounded-full bg-amber-400 text-zinc-950 font-bold text-sm flex items-center justify-center shrink-0">1</span>
-          <h2 class="text-zinc-100 font-semibold">Fill in your intake form</h2>
+          <h2 class="text-zinc-100 font-semibold">Intake form submitted</h2>
         </div>
-        <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-          Your projects, your clients, how you currently work. This is how Johannes builds a CLAUDE.md that's actually about you — not a template.
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Your intake form is submitted &mdash; your CLAUDE.md is being generated. You'll receive it by email within 15 minutes.
         </p>
-
-        {TALLY_FORM_ID ? (
-          <!-- Tally embed loads when TALLY_FORM_ID is set -->
-          <div data-tally-src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1`} data-tally-overlay="0" class="w-full min-h-[400px]"></div>
-          <script async src="https://tally.so/widgets/embed.js"></script>
-        ) : (
-          <!-- Fallback: email until Tally is configured -->
-          <a
-            href="mailto:johannes@brainkit.so?subject=BrainKit%20Intake%20Form&body=Hi%20Johannes%2C%0A%0AI%20just%20purchased%20BrainKit%20Kickstart.%20Here%27s%20my%20context%3A%0A%0AName%3A%0AWhat%20I%20do%3A%0AMy%20main%20projects%20right%20now%3A%0AClients%20or%20people%20I%20track%3A%0AWhat%20I%20want%20Claude%20to%20know%20about%20me%3A%0A"
-            class="inline-flex items-center gap-2 bg-amber-400 text-zinc-950 font-semibold px-6 py-3 rounded-lg hover:bg-amber-300 transition-colors text-sm"
-          >
-            Send intake info by email &rarr;
-          </a>
-        )}
       </div>
 
       <!-- Step 2: Book setup call -->

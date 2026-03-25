@@ -1,0 +1,198 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy — BrainKit"
+  description="Privacy Policy for BrainKit, the AI productivity setup service."
+>
+  <main class="min-h-screen px-4 py-24">
+    <div class="max-w-3xl mx-auto">
+
+      <div class="mb-12">
+        <p class="text-amber-400 text-sm font-medium mb-2">Legal</p>
+        <h1 class="font-display text-4xl font-bold text-zinc-100 mb-4">Privacy Policy</h1>
+        <p class="text-zinc-400 text-sm">Last updated: March 2026</p>
+      </div>
+
+      <div class="space-y-10 text-zinc-400 leading-relaxed">
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">1. Who We Are</h2>
+          <p>
+            BrainKit is operated by Johannes (sole trader). We provide a bespoke AI productivity setup
+            service for solo consultants and freelancers.
+          </p>
+          <p class="mt-3">
+            Data controller contact:
+            <a href="mailto:johannes@brainkit.so" class="text-amber-400 hover:text-amber-300 transition">
+              johannes@brainkit.so
+            </a>
+          </p>
+          <p class="mt-3">
+            This policy covers data collected via brainkit.so and in the course of delivering our
+            service. It applies to clients in the EU, UK, and elsewhere. We comply with the GDPR
+            and UK GDPR where applicable.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">2. What Data We Collect</h2>
+          <p>We collect only what is necessary to deliver the service:</p>
+          <ul class="list-disc list-inside mt-3 space-y-2 ml-2">
+            <li>
+              <strong class="text-zinc-200">Name and email address</strong> — provided at checkout via
+              Stripe, used to contact you about your order and send your deliverables.
+            </li>
+            <li>
+              <strong class="text-zinc-200">Intake form responses</strong> — information you voluntarily
+              provide about your work, projects, clients, and preferences. Used solely to build your
+              CLAUDE.md configuration.
+            </li>
+            <li>
+              <strong class="text-zinc-200">Payment data</strong> — handled entirely by Stripe. We
+              receive only a confirmation of payment; we never see or store your card details.
+            </li>
+          </ul>
+          <p class="mt-3">
+            We do not collect any data through this website beyond what Stripe processes during
+            checkout. There are no tracking pixels and no analytics cookies on brainkit.so.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">3. How We Use Your Data</h2>
+          <p>Your data is used for the following purposes:</p>
+          <ul class="list-disc list-inside mt-3 space-y-2 ml-2">
+            <li>
+              <strong class="text-zinc-200">Service delivery</strong> — generating your CLAUDE.md and
+              related configuration materials based on your intake form responses.
+            </li>
+            <li>
+              <strong class="text-zinc-200">Communication</strong> — sending you your deliverables,
+              booking confirmation for your setup call, and any follow-up support.
+            </li>
+            <li>
+              <strong class="text-zinc-200">Legal and compliance</strong> — retaining Stripe transaction
+              records as required by applicable tax and accounting law.
+            </li>
+          </ul>
+          <p class="mt-3">
+            Our legal basis for processing is <strong class="text-zinc-200">contract performance</strong>
+            (Article 6(1)(b) GDPR) — we need this data to fulfil the service you purchased. For
+            transaction records retained for legal compliance, the basis is
+            <strong class="text-zinc-200">legal obligation</strong> (Article 6(1)(c) GDPR).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">4. Data Retention</h2>
+          <p>
+            Intake form responses and working notes are deleted after your deliverables have been
+            sent. We do not maintain an ongoing database of client project information.
+          </p>
+          <p class="mt-3">
+            Your name, email address, and Stripe transaction record are retained for as long as
+            required by applicable tax and accounting regulations (typically 5-7 years depending
+            on jurisdiction).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">5. Third-Party Processors</h2>
+          <p>We use the following third-party services that may process your data:</p>
+          <ul class="list-disc list-inside mt-3 space-y-2 ml-2">
+            <li>
+              <strong class="text-zinc-200">Stripe</strong> — payment processing. Stripe acts as an
+              independent data controller for payment data. See
+              <a
+                href="https://stripe.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-amber-400 hover:text-amber-300 transition"
+              >
+                Stripe's Privacy Policy
+              </a>.
+            </li>
+            <li>
+              <strong class="text-zinc-200">Email provider</strong> — we use an email service to
+              deliver your files and communicate with you. Emails are sent from or on behalf of
+              johannes@brainkit.so. We do not use bulk marketing platforms.
+            </li>
+          </ul>
+          <p class="mt-3">
+            We do not sell, rent, or share your personal data with any other third party.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">6. Cookies</h2>
+          <p>
+            brainkit.so does not set any first-party cookies. Stripe may set cookies when you
+            interact with the payment flow on checkout pages hosted or powered by Stripe. These are
+            necessary for payment processing and fraud prevention.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">7. Your Rights</h2>
+          <p>
+            Under the GDPR and UK GDPR you have the following rights regarding your personal data:
+          </p>
+          <ul class="list-disc list-inside mt-3 space-y-2 ml-2">
+            <li><strong class="text-zinc-200">Access</strong> — request a copy of the data we hold about you.</li>
+            <li><strong class="text-zinc-200">Rectification</strong> — ask us to correct inaccurate data.</li>
+            <li><strong class="text-zinc-200">Erasure</strong> — request deletion of your data, subject to our legal retention obligations.</li>
+            <li><strong class="text-zinc-200">Restriction</strong> — ask us to limit how we process your data in certain circumstances.</li>
+            <li><strong class="text-zinc-200">Portability</strong> — receive your data in a structured, machine-readable format.</li>
+            <li><strong class="text-zinc-200">Objection</strong> — object to processing where our basis is legitimate interests.</li>
+          </ul>
+          <p class="mt-3">
+            To exercise any of these rights, email
+            <a href="mailto:johannes@brainkit.so" class="text-amber-400 hover:text-amber-300 transition">
+              johannes@brainkit.so
+            </a>.
+            We will respond within 30 days. If you are in the EU or UK and believe we have handled
+            your data unlawfully, you have the right to lodge a complaint with your local data
+            protection authority.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">8. International Transfers</h2>
+          <p>
+            Your data may be processed in countries outside the EU/EEA or UK by our third-party
+            processors (e.g. Stripe). Where this occurs, we rely on those processors' own adequacy
+            mechanisms (such as Standard Contractual Clauses) to ensure your data is protected to
+            GDPR standards.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">9. Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. The updated version will always
+            be available at brainkit.so/legal/privacy. For material changes we will notify active
+            clients by email.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-zinc-100 text-xl font-semibold mb-3">10. Contact</h2>
+          <p>
+            Privacy questions or data subject requests:
+            <a href="mailto:johannes@brainkit.so" class="text-amber-400 hover:text-amber-300 transition">
+              johannes@brainkit.so
+            </a>
+          </p>
+        </section>
+
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-zinc-800">
+        <a href="/" class="text-amber-400 hover:text-amber-300 transition text-sm">&larr; Back to BrainKit</a>
+      </div>
+
+    </div>
+  </main>
+</Layout>
