@@ -12,11 +12,16 @@ import { SLOTS_AVAILABLE, CAL_LINK } from '../config/site';
       Your AI assistant that actually knows you.
     </h1>
 
-    <p class="text-zinc-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+    <p class="text-zinc-400 text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
       Most AI tools give generic answers. BrainKit builds a system that knows your work, your projects, and your voice — then keeps it current every month.
     </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+    <p class="text-zinc-300 text-base sm:text-lg max-w-2xl mx-auto mb-2 leading-relaxed">
+      Send a voice note from your walk. It lands in your vault, routed, before you get home.
+    </p>
+    <p class="text-xs text-zinc-500 max-w-2xl mx-auto mb-10">(Available from month 2 on Concierge, or day 1 on Full Stack.)</p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
       <a
         href={`https://cal.com/${CAL_LINK}`}
         target="_blank"
@@ -33,6 +38,10 @@ import { SLOTS_AVAILABLE, CAL_LINK } from '../config/site';
       </a>
     </div>
 
+    <p class="text-zinc-500 text-xs mb-8">
+      Your notes stay in your own vault. We never train on your content.
+    </p>
+
     <p class="text-amber-400 text-sm font-medium mb-10">
       <span class="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2 align-middle"></span>
       {SLOTS_AVAILABLE} spots available
@@ -40,9 +49,9 @@ import { SLOTS_AVAILABLE, CAL_LINK } from '../config/site';
 
     <blockquote class="max-w-lg mx-auto border-l-2 border-amber-400/40 pl-4 text-left">
       <p class="text-amber-400/60 text-sm italic leading-relaxed">
-        "I built this while training 12 hours a week for an Ironman. If it works for that, it'll work for you."
+        "Your clients, your projects, your voice — finally in one place your AI actually understands."
       </p>
-      <cite class="text-zinc-600 text-xs not-italic mt-2 block">— Johannes</cite>
+      <cite class="text-zinc-600 text-xs not-italic mt-2 block">— Johannes, BrainKit</cite>
     </blockquote>
   </div>
 </section>
