@@ -2,7 +2,7 @@
 const faqs = [
   {
     q: "Do I need to be technical?",
-    a: "No terminal, no setup experience needed — Johannes handles everything on the onboarding call.",
+    a: "Kickstart is fully automated — fill out one form, and your personalised CLAUDE.md + vault arrive in your inbox. Setup requires running one script (setup.sh) — open Terminal (search 'Terminal' in Spotlight), drag the file into the window, press Enter. Takes about 5 minutes. You can inspect the script before running it at github.com/Sockshead/brainkit-starter. If you get stuck, reply to the delivery email and we'll help.",
   },
   {
     q: "What happens after the Kickstart?",
@@ -21,12 +21,16 @@ const faqs = [
     a: "Yes — 30-day email notice, no partial refund on the current month. Minimum 3 months on Concierge.",
   },
   {
+    q: "What does the CLAUDE.md actually look like?",
+    a: "You can see real examples for coaches, consultants, and founders in the 'How it works' section above — click the role tabs to preview the actual output. The file includes an identity block, your active projects, a routing table that sends inputs to the right folder, and rules specific to your workflow.",
+  },
+  {
     q: "Why does this cost more than a Fiverr gig?",
     a: "A Fiverr gig sets up a generic vault. BrainKit configures a system specifically for your workflow, then maintains it. The $30 setup will stop working in 3 months. This one doesn't.",
   },
   {
     q: "Is my data private?",
-    a: "Your vault lives on your Mac and a private GitHub repo only you and Johannes can access. Voice notes go through OpenAI Whisper API and Claude Code CLI only.",
+    a: "Your vault (notes, projects, files) lives on your Mac and a private GitHub repo. It never leaves your machine except for git sync to your own repo. Voice transcription (Concierge/Full Stack only) uses OpenAI Whisper API — audio leaves your Mac only during transcription, is not stored by OpenAI after processing, and is not used for training. Kickstart has no voice pipeline — all data stays local.",
   },
   {
     q: "What if my Mac breaks or I get a new one?",

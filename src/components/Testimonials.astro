@@ -1,31 +1,27 @@
 ---
-import { CAL_LINK } from '../config/site';
+import { STRIPE_KICKSTART_LINK } from '../config/site';
 ---
 
 <section class="py-24 px-4">
   <div class="max-w-4xl mx-auto">
     <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 text-center mb-4">
-      What clients say
+      Be one of the first.
     </h2>
     <p class="text-zinc-500 text-center text-sm mb-12">
-      Currently accepting first clients. Testimonials will appear here.
+      Early clients get intro pricing and direct access.
     </p>
 
     <div class="flex justify-center">
-      <div class="border border-dashed border-zinc-700 rounded-xl p-8 max-w-sm w-full text-center">
-        <div class="w-12 h-12 rounded-full bg-zinc-800 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-zinc-500 text-xl">?</span>
-        </div>
-        <p class="text-zinc-500 text-sm italic mb-4">
-          "Be one of the first 3 clients. Kickstart at intro price — $197 instead of $297."
-        </p>
+      <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-8 max-w-lg w-full text-center">
+        <p class="text-zinc-300 text-base font-medium mb-2">Be one of the first 3 clients.</p>
+        <p class="text-zinc-500 text-sm mb-6">Intro price: $197 instead of $297. Your feedback shapes the system. You get direct access to Johannes throughout setup.</p>
         <a
-          href={`https://cal.com/${CAL_LINK}`}
+          href={STRIPE_KICKSTART_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-amber-400 text-sm hover:text-amber-300 transition"
+          class="inline-block bg-amber-400 text-zinc-950 font-semibold px-6 py-3 rounded-lg hover:bg-amber-300 transition-colors text-sm"
         >
-          Book a discovery call to be one of our first clients &rarr;
+          Get started — $197 &rarr;
         </a>
       </div>
     </div>
