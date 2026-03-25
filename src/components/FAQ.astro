@@ -25,6 +25,10 @@ const faqs = [
     a: "You can see real examples for coaches, consultants, and founders in the 'How it works' section above — click the role tabs to preview the actual output. The file includes an identity block, your active projects, a routing table that sends inputs to the right folder, and rules specific to your workflow.",
   },
   {
+    q: "How does the CLAUDE.md work technically?",
+    a: "CLAUDE.md is a plain text file that Claude Code reads at the start of every session — it is injected directly into the model's context window before you type anything. It is not a plugin, not MCP, not RAG. It is the simplest possible mechanism, and that is exactly why it is durable: there is nothing to break, no API to rotate, no database to sync. The routing table inside it tells Claude where to file each type of input. The identity block tells Claude who you are. Every session starts with full context, not zero context.",
+  },
+  {
     q: "Why does this cost more than a Fiverr gig?",
     a: "A Fiverr gig sets up a generic vault. BrainKit configures a system specifically for your workflow, then maintains it. The $30 setup will stop working in 3 months. This one doesn't.",
   },
@@ -35,6 +39,10 @@ const faqs = [
   {
     q: "What if my Mac breaks or I get a new one?",
     a: "Your vault is backed up to a private GitHub repo. Setup on a new machine takes 20 minutes with setup.sh.",
+  },
+  {
+    q: "What if it is not what I expected?",
+    a: "Email johannes@brainkit.so within 7 days of delivery. If your CLAUDE.md is not personalised to your work or the setup call did not happen, you get a full refund. No lengthy process.",
   },
   {
     q: "How many clients do you take?",

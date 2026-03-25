@@ -72,6 +72,25 @@ Raising pre-seed. 3 active pilots. Team of 4.
 ## Decision Log Protocol
 Every major decision: context, options considered,
 chosen path, rationale. File same day.`,
+
+  developer: `# CLAUDE.md — Freelance Developer
+
+## Routing Table
+- Client repos         →  Clients/{{CompanyName}}/
+- Feature notes        →  Clients/{{CompanyName}}/features/YYYY-MM-DD-{{feature}}.md
+- PR reviews           →  Projects/{{project}}/reviews/YYYY-MM-DD.md
+- Bug reports          →  Projects/{{project}}/bugs/{{issue-id}}.md
+- OSS contributions    →  OSS/{{repo}}/notes.md
+
+## Active Clients (update monthly)
+| Client       | Stack     | Status  |
+|--------------|-----------|---------|
+| Acme Finance | React/Node| Active  |
+| Beta Corp    | Go/Postgres| Active  |
+
+## Context
+Solo freelancer. 2-4 concurrent clients. Prioritize by
+deadline. Always include issue/ticket reference in notes.`,
 };
 ---
 
@@ -131,6 +150,9 @@ chosen path, rationale. File same day.`,
         <button data-role="founder" class="role-btn px-4 py-2 rounded-lg text-sm font-medium transition-all border border-zinc-700 text-zinc-400 hover:border-zinc-500">
           Founder
         </button>
+        <button data-role="developer" class="role-btn px-4 py-2 rounded-lg text-sm font-medium transition-all border border-zinc-700 text-zinc-400 hover:border-zinc-500">
+          Developer
+        </button>
       </div>
 
       <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden">
@@ -154,12 +176,14 @@ chosen path, rationale. File same day.`,
     coach: document.getElementById('role-preview')?.textContent ?? '',
     consultant: `# CLAUDE.md — Independent Consultant\n\n## Routing Table\n- Client files     →  Clients/{{CompanyName}}/\n- Project briefs   →  Clients/{{name}}/Brief.md\n- Meeting notes    →  Clients/{{name}}/Meetings/YYYY-MM-DD.md\n- Proposals        →  Pipeline/{{company}}-Proposal.md\n\n## Active Clients (update monthly)\n| Client   | Status | Next deliverable    |\n|----------|--------|---------------------|\n| Acme     | Active | Strategy deck, Apr 1|\n| Globex   | Active | Workshop, Apr 15    |\n\n## Context\n3–5 concurrent engagements. Prioritize by deadline.`,
     founder: `# CLAUDE.md — Founder\n\n## Routing Table\n- Investor updates  →  Investors/{{name}}/Updates/\n- Pilot feedback    →  Pilots/{{company}}/Feedback.md\n- Decisions         →  Decisions/YYYY-MM-DD-{{title}}.md\n- Team context      →  Team/{{name}}.md\n\n## Current Focus\nRaising pre-seed. 3 active pilots. Team of 4.\n\n## Decision Log Protocol\nEvery major decision: context, options considered,\nchosen path, rationale. File same day.`,
+    developer: `# CLAUDE.md — Freelance Developer\n\n## Routing Table\n- Client repos         →  Clients/{{CompanyName}}/\n- Feature notes        →  Clients/{{CompanyName}}/features/YYYY-MM-DD-{{feature}}.md\n- PR reviews           →  Projects/{{project}}/reviews/YYYY-MM-DD.md\n- Bug reports          →  Projects/{{project}}/bugs/{{issue-id}}.md\n- OSS contributions    →  OSS/{{repo}}/notes.md\n\n## Active Clients (update monthly)\n| Client       | Stack     | Status  |\n|--------------|-----------|----------|\n| Acme Finance | React/Node| Active  |\n| Beta Corp    | Go/Postgres| Active  |\n\n## Context\nSolo freelancer. 2-4 concurrent clients. Prioritize by\ndeadline. Always include issue/ticket reference in notes.`,
   };
 
   const filenames: Record<string, string> = {
     coach: 'CLAUDE.md — Coach',
     consultant: 'CLAUDE.md — Consultant',
     founder: 'CLAUDE.md — Founder',
+    developer: 'CLAUDE.md — Developer',
   };
 
   const tabContainer = document.getElementById('role-tabs');
