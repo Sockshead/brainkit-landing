@@ -1,0 +1,66 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "We build your vault",
+    body: "Obsidian setup, CLAUDE.md written to your workflow. Your projects, your language, your rules.",
+  },
+  {
+    number: "2",
+    title: "You send voice notes",
+    body: "Talk to Telegram. BrainKit transcribes, routes, and files it in the right place.",
+  },
+  {
+    number: "3",
+    title: "We maintain it monthly",
+    body: "Vault audit, CLAUDE.md update, Brain Report: what your AI processed this month.",
+  },
+];
+
+const queries = [
+  "What did I discuss with Sarah last week?",
+  "Summarize everything on Project X.",
+  "What tasks did I capture this month?",
+];
+---
+
+<section class="py-24 px-4 bg-zinc-900/30">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 text-center mb-6">
+      One system. Customized for you. Running in the background.
+    </h2>
+
+    <p class="text-center text-zinc-400 mb-16 max-w-xl mx-auto">
+      Not a template. Not a course. A fully built, maintained AI knowledge system — delivered to your Mac.
+    </p>
+
+    <!-- Steps: horizontal on desktop, vertical on mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 relative">
+      <!-- Connector line (desktop only) -->
+      <div class="hidden md:block absolute top-8 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-px bg-zinc-800 z-0"></div>
+
+      {steps.map((step) => (
+        <div class="relative flex flex-col items-start md:items-center text-left md:text-center gap-4 z-10">
+          <div class="w-12 h-12 rounded-full bg-amber-400 text-zinc-950 font-display font-bold text-lg flex items-center justify-center shrink-0">
+            {step.number}
+          </div>
+          <div>
+            <h3 class="text-zinc-100 font-semibold text-lg mb-2">{step.title}</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">{step.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Terminal-style blockquote -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 font-mono text-sm max-w-2xl mx-auto">
+      <p class="text-zinc-500 mb-3 text-xs uppercase tracking-wider">Ask your AI anything</p>
+      {queries.map((q) => (
+        <div class="flex items-start gap-3 mb-2 last:mb-0">
+          <span class="text-amber-400 select-none shrink-0">&gt;</span>
+          <span class="text-zinc-300">{q}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

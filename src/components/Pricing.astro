@@ -1,0 +1,120 @@
+---
+import { CAL_LINK } from '../config/site';
+
+const plans = [
+  {
+    name: "Starter",
+    price: "$997",
+    cadence: "one-time",
+    description: "Get your knowledge infrastructure built and ready to use.",
+    features: [
+      "Customized Obsidian vault setup",
+      "CLAUDE.md written for your workflow",
+      "1 onboarding call (60 min)",
+    ],
+    excluded: [
+      "No voice input",
+      "No monthly maintenance",
+    ],
+    cta: "Get started \u2192",
+    ctaHref: `https://cal.com/${CAL_LINK}`,
+    highlight: false,
+  },
+  {
+    name: "Standard",
+    price: "$2,500",
+    cadence: "+ $500/mo",
+    description: "Full system with voice pipeline and ongoing maintenance.",
+    features: [
+      "Everything in Starter",
+      "Voice-to-vault via Telegram",
+      "Private git backup (always recoverable)",
+      "2 onboarding calls",
+      "Monthly Brain Concierge: vault audit + CLAUDE.md update + Brain Report",
+    ],
+    excluded: [],
+    cta: "Book a call \u2192",
+    ctaHref: `https://cal.com/${CAL_LINK}`,
+    highlight: true,
+    badge: "Most popular",
+  },
+  {
+    name: "Pro",
+    price: "$4,900",
+    cadence: "+ $500/mo (3 mo included)",
+    description: "Server-side voice pipeline and custom integrations.",
+    features: [
+      "Everything in Standard",
+      "Voice pipeline runs server-side (no laptop required)",
+      "One custom integration: Calendar, Gmail, Linear, or Notion",
+      "Quarterly strategy call",
+    ],
+    excluded: [],
+    cta: "Book a call \u2192",
+    ctaHref: `https://cal.com/${CAL_LINK}`,
+    highlight: false,
+  },
+];
+---
+
+<section id="pricing" class="py-24 px-4">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 text-center mb-4">
+      Simple, transparent pricing.
+    </h2>
+    <p class="text-zinc-400 text-center mb-16">
+      One-time setup + optional monthly maintenance. No surprises.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      {plans.map((plan) => (
+        <div class={`relative bg-zinc-900 rounded-xl p-6 flex flex-col border ${plan.highlight ? 'border-amber-400' : 'border-zinc-800'}`}>
+          {plan.badge && (
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span class="bg-amber-400 text-zinc-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                {plan.badge}
+              </span>
+            </div>
+          )}
+
+          <div class="mb-6">
+            <h3 class="text-zinc-100 font-semibold text-lg mb-2">{plan.name}</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="font-display text-4xl font-bold text-zinc-100">{plan.price}</span>
+              <span class="text-zinc-400 text-sm">{plan.cadence}</span>
+            </div>
+            <p class="text-zinc-400 text-sm">{plan.description}</p>
+          </div>
+
+          <ul class="flex flex-col gap-3 mb-6 flex-1">
+            {plan.features.map((f) => (
+              <li class="flex items-start gap-2 text-sm text-zinc-300">
+                <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+                {f}
+              </li>
+            ))}
+            {plan.excluded.map((f) => (
+              <li class="flex items-start gap-2 text-sm text-zinc-600">
+                <span class="mt-0.5 shrink-0">&#8722;</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={plan.ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`text-center font-semibold px-6 py-3 rounded-lg transition ${plan.highlight ? 'bg-amber-400 text-zinc-950 hover:bg-amber-300' : 'border border-zinc-700 text-zinc-200 hover:border-zinc-500'}`}
+          >
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-zinc-500 text-sm">
+      All plans include a 30-day no-questions-asked refund if setup doesn't go smoothly.
+    </p>
+  </div>
+</section>

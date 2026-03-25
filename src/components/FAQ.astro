@@ -1,0 +1,65 @@
+---
+const faqs = [
+  {
+    q: "Do I need to be technical?",
+    a: "No. If you can install Obsidian and open a terminal, you're set. We handle everything else on the onboarding call.",
+  },
+  {
+    q: "What if I already use Notion / Roam / Logseq?",
+    a: "BrainKit is built on Obsidian. If you're open to switching, we handle the migration planning on the discovery call. Other apps aren't supported in v1.",
+  },
+  {
+    q: "What's the voice pipeline?",
+    a: "You send a voice note to a Telegram bot. It transcribes it with Whisper, routes it to the right file in your vault, and commits the change to your private git backup. Standard runs on your Mac; Pro runs on a server (always on).",
+  },
+  {
+    q: "What's in the monthly Brain Report?",
+    a: "Top 3 topics Claude processed this month, CLAUDE.md changes made and why, inbox items older than 7 days flagged, and one improvement planned for next month.",
+  },
+  {
+    q: "Can I cancel the retainer?",
+    a: "Yes — 30-day email notice, no partial refund on the current month.",
+  },
+  {
+    q: "Is my data private?",
+    a: "Your vault lives on your Mac and a private GitHub repo only you and Johannes can access. Voice notes go through OpenAI Whisper API and Claude Code CLI only.",
+  },
+  {
+    q: "What if my Mac breaks or I get a new one?",
+    a: "Your vault is backed up to a private GitHub repo. Setup on a new machine takes 20 minutes with setup.sh.",
+  },
+  {
+    q: "How many clients do you take?",
+    a: "Limited intentionally. Check the availability indicator at the top of this page.",
+  },
+];
+---
+
+<section class="py-24 px-4 bg-zinc-900/30">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 text-center mb-16">
+      Frequently asked questions
+    </h2>
+
+    <div class="flex flex-col divide-y divide-zinc-800">
+      {faqs.map((faq) => (
+        <details class="group py-5">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer">
+            <span class="text-zinc-100 font-medium text-base">{faq.q}</span>
+            <svg
+              class="faq-chevron w-5 h-5 text-zinc-500 shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <p class="mt-4 text-zinc-400 text-sm leading-relaxed">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

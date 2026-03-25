@@ -1,0 +1,42 @@
+---
+import { SLOTS_AVAILABLE, CAL_LINK } from '../config/site';
+---
+
+<section class="min-h-screen flex flex-col items-center justify-center px-4 py-24 text-center">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-amber-400 text-sm font-medium tracking-widest uppercase mb-6">
+      Done-for-you AI knowledge infrastructure
+    </p>
+
+    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-100 leading-tight mb-6">
+      Your AI assistant that knows everything you know.
+    </h1>
+
+    <p class="text-zinc-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+      BrainKit sets up your Obsidian + Claude Code system — customized for how you work.
+      You send voice notes. Your AI handles the rest.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+      <a
+        href={`https://cal.com/${CAL_LINK}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-amber-400 text-zinc-950 font-semibold px-6 py-3 rounded-lg hover:bg-amber-300 transition w-full sm:w-auto text-center"
+      >
+        Book a discovery call &rarr;
+      </a>
+      <a
+        href="#process"
+        class="border border-zinc-700 text-zinc-200 px-6 py-3 rounded-lg hover:border-zinc-500 transition w-full sm:w-auto text-center"
+      >
+        See how it works &darr;
+      </a>
+    </div>
+
+    <p class="text-amber-400 text-sm font-medium">
+      <span class="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2 align-middle"></span>
+      {SLOTS_AVAILABLE} spots available
+    </p>
+  </div>
+</section>

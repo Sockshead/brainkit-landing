@@ -1,0 +1,65 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Book a discovery call",
+    body: "20 min. We figure out your workflow, projects, and which tier fits.",
+  },
+  {
+    number: "2",
+    title: "Fill out the intake form",
+    body: "12 questions about your work, projects, and language. Takes 10 minutes.",
+  },
+  {
+    number: "3",
+    title: "We build your system",
+    body: "48-hour turnaround. Vault structure, CLAUDE.md, voice pipeline if applicable.",
+  },
+  {
+    number: "4",
+    title: "Onboarding call",
+    body: "Screen share. We run setup on your Mac together and test everything.",
+  },
+  {
+    number: "5",
+    title: "You're live",
+    body: "Start sending voice notes. Your AI is online.",
+  },
+  {
+    number: "6",
+    title: "Monthly check-in",
+    body: "We audit your vault, update CLAUDE.md, send your Brain Report.",
+  },
+];
+---
+
+<section id="process" class="py-24 px-4 bg-zinc-900/30">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 text-center mb-4">
+      Here's exactly what happens.
+    </h2>
+    <p class="text-zinc-400 text-center mb-16">No mystery. No hand-wavy 'onboarding process.' Here's the actual sequence.</p>
+
+    <div class="relative flex flex-col gap-0">
+      {steps.map((step, i) => (
+        <div class="flex items-start gap-6 relative">
+          <!-- Left column: circle + line -->
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-amber-400 text-zinc-950 font-display font-bold flex items-center justify-center text-sm shrink-0 z-10">
+              {step.number}
+            </div>
+            {i < steps.length - 1 && (
+              <div class="w-px flex-1 bg-zinc-800 min-h-[3rem]"></div>
+            )}
+          </div>
+
+          <!-- Right column: content -->
+          <div class="pb-10">
+            <h3 class="text-zinc-100 font-semibold text-lg mb-1">{step.title}</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">{step.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import { SITE_URL } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "BrainKit — Your AI assistant that knows everything you know.",
+  description = "BrainKit sets up your Obsidian + Claude Code system — customized for how you work. Done-for-you AI knowledge infrastructure for consultants, coaches, and creators.",
+} = Astro.props;
+
+const ogImage = `${SITE_URL}/og.png`;
+---
+
+<!doctype html>
+<html lang="en" class="bg-zinc-950">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={SITE_URL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Umami Analytics (fill website ID after deploy) -->
+    <script defer src="https://analytics.umami.is/script.js" data-website-id="UMAMI_PLACEHOLDER"></script>
+  </head>
+  <body class="font-sans text-zinc-100 bg-zinc-950 antialiased">
+    <slot />
+  </body>
+</html>
