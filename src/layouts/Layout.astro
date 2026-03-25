@@ -42,8 +42,9 @@ const ogImage = `${SITE_URL}/og.png`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Umami Analytics (fill website ID after deploy) -->
+    <!-- Umami analytics — uncomment and replace UMAMI_PLACEHOLDER after deploy to Cloudflare Pages
     <script defer src="https://analytics.umami.is/script.js" data-website-id="UMAMI_PLACEHOLDER"></script>
+    -->
   </head>
   <body class="font-sans text-zinc-100 bg-zinc-950 antialiased">
     <slot />
