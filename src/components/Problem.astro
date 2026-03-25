@@ -2,15 +2,15 @@
 const problems = [
   {
     number: "01",
-    text: "You have dozens of notes in 5 different apps. None of them talk to each other.",
+    text: "You ask Claude a question. It gives the same answer it gives everyone. It doesn't know your clients, your projects, or how you think.",
   },
   {
     number: "02",
-    text: "You can't ask your notes a question. You have to remember where you wrote it.",
+    text: "You tried building a system yourself. It took a weekend, worked for two weeks, then fell apart when your projects changed.",
   },
   {
     number: "03",
-    text: "Every AI tool you try needs a 'system.' You don't have time to build one.",
+    text: "Every session starts from zero. Your AI has no memory of what you built last month, who you talked to, or what you decided.",
   },
 ];
 ---
@@ -18,21 +18,22 @@ const problems = [
 <section class="py-24 px-4">
   <div class="max-w-5xl mx-auto">
     <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 text-center mb-16">
-      You're losing knowledge every day.
+      Generic AI is worse than no AI.
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
       {problems.map((p) => (
-        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-          <div class="text-amber-400 font-display font-bold text-3xl mb-4">{p.number}</div>
-          <p class="text-zinc-300 text-base leading-relaxed">{p.text}</p>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 relative">
+          <div class="text-amber-400/30 font-display font-bold text-6xl absolute top-4 right-5 leading-none select-none pointer-events-none">{p.number}</div>
+          <div class="text-amber-400 font-display font-bold text-2xl mb-4 relative z-10">{p.number}</div>
+          <p class="text-zinc-300 text-base leading-relaxed relative z-10">{p.text}</p>
         </div>
       ))}
     </div>
 
     <p class="text-center text-zinc-400 text-lg max-w-2xl mx-auto">
-      Your knowledge is your business.
-      <span class="text-zinc-100 font-medium"> It deserves better infrastructure.</span>
+      AI systems decay without maintenance.
+      <span class="text-zinc-100 font-medium"> BrainKit is your maintenance contract.</span>
     </p>
   </div>
 </section>

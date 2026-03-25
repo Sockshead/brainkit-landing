@@ -2,32 +2,32 @@
 const steps = [
   {
     number: "1",
-    title: "We build your vault",
-    body: "Obsidian setup, CLAUDE.md written to your workflow. Your projects, your language, your rules.",
+    title: "We build your system",
+    body: "CLAUDE.md written specifically for your work. Your projects, your clients, your routing rules. Not a template — your actual workflow.",
   },
   {
     number: "2",
-    title: "You send voice notes",
-    body: "Talk to Telegram. BrainKit transcribes, routes, and files it in the right place.",
+    title: "You talk, it listens",
+    body: "Send voice notes via Telegram. Your AI routes them to the right project, files meeting notes, captures ideas. No laptop required.",
   },
   {
     number: "3",
-    title: "We maintain it monthly",
-    body: "Vault audit, CLAUDE.md update, Brain Report: what your AI processed this month.",
+    title: "We keep it current",
+    body: "Every month: CLAUDE.md audited and updated as your work evolves. Brain Report sent. New AI capabilities applied. Your system gets smarter, not staler.",
   },
 ];
 
 const queries = [
   "What did I discuss with Sarah last week?",
-  "Summarize everything on Project X.",
-  "What tasks did I capture this month?",
+  "Summarize everything I captured about Project X",
+  "What tasks did I commit to this month?",
 ];
 ---
 
 <section class="py-24 px-4 bg-zinc-900/30">
   <div class="max-w-5xl mx-auto">
     <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 text-center mb-6">
-      One system. Customized for you. Running in the background.
+      An AI that knows you. And stays that way.
     </h2>
 
     <p class="text-center text-zinc-400 mb-16 max-w-xl mx-auto">
@@ -38,6 +38,9 @@ const queries = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 relative">
       <!-- Connector line (desktop only) -->
       <div class="hidden md:block absolute top-8 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-px bg-zinc-800 z-0"></div>
+
+      <!-- Connector line (mobile only) -->
+      <div class="md:hidden absolute left-6 top-10 bottom-10 w-px bg-zinc-800 z-0"></div>
 
       {steps.map((step) => (
         <div class="relative flex flex-col items-start md:items-center text-left md:text-center gap-4 z-10">

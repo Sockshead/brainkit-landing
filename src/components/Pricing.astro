@@ -1,60 +1,5 @@
 ---
-import { CAL_LINK } from '../config/site';
-
-const plans = [
-  {
-    name: "Starter",
-    price: "$997",
-    cadence: "one-time",
-    description: "Get your knowledge infrastructure built and ready to use.",
-    features: [
-      "Customized Obsidian vault setup",
-      "CLAUDE.md written for your workflow",
-      "1 onboarding call (60 min)",
-    ],
-    excluded: [
-      "No voice input",
-      "No monthly maintenance",
-    ],
-    cta: "Get started \u2192",
-    ctaHref: `https://cal.com/${CAL_LINK}`,
-    highlight: false,
-  },
-  {
-    name: "Standard",
-    price: "$2,500",
-    cadence: "+ $500/mo",
-    description: "Full system with voice pipeline and ongoing maintenance.",
-    features: [
-      "Everything in Starter",
-      "Voice-to-vault via Telegram",
-      "Private git backup (always recoverable)",
-      "2 onboarding calls",
-      "Monthly Brain Concierge: vault audit + CLAUDE.md update + Brain Report",
-    ],
-    excluded: [],
-    cta: "Book a call \u2192",
-    ctaHref: `https://cal.com/${CAL_LINK}`,
-    highlight: true,
-    badge: "Most popular",
-  },
-  {
-    name: "Pro",
-    price: "$4,900",
-    cadence: "+ $500/mo (3 mo included)",
-    description: "Server-side voice pipeline and custom integrations.",
-    features: [
-      "Everything in Standard",
-      "Voice pipeline runs server-side (no laptop required)",
-      "One custom integration: Calendar, Gmail, Linear, or Notion",
-      "Quarterly strategy call",
-    ],
-    excluded: [],
-    cta: "Book a call \u2192",
-    ctaHref: `https://cal.com/${CAL_LINK}`,
-    highlight: false,
-  },
-];
+import { CAL_LINK, INTRO_PRICE, REGULAR_PRICE } from '../config/site';
 ---
 
 <section id="pricing" class="py-24 px-4">
@@ -66,55 +11,177 @@ const plans = [
       One-time setup + optional monthly maintenance. No surprises.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      {plans.map((plan) => (
-        <div class={`relative bg-zinc-900 rounded-xl p-6 flex flex-col border ${plan.highlight ? 'border-amber-400' : 'border-zinc-800'}`}>
-          {plan.badge && (
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-              <span class="bg-amber-400 text-zinc-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                {plan.badge}
-              </span>
-            </div>
-          )}
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10 items-start">
 
-          <div class="mb-6">
-            <h3 class="text-zinc-100 font-semibold text-lg mb-2">{plan.name}</h3>
-            <div class="flex items-baseline gap-2 mb-2">
-              <span class="font-display text-4xl font-bold text-zinc-100">{plan.price}</span>
-              <span class="text-zinc-400 text-sm">{plan.cadence}</span>
-            </div>
-            <p class="text-zinc-400 text-sm">{plan.description}</p>
+      <!-- Free -->
+      <div class="relative bg-zinc-900 rounded-xl p-6 flex flex-col border border-zinc-800">
+        <div class="mb-6">
+          <h3 class="text-zinc-100 font-semibold text-lg mb-2">Free</h3>
+          <div class="flex items-baseline gap-2 mb-2">
+            <span class="font-display text-4xl font-bold text-zinc-100">$0</span>
+            <span class="text-zinc-400 text-sm">OSS template</span>
           </div>
-
-          <ul class="flex flex-col gap-3 mb-6 flex-1">
-            {plan.features.map((f) => (
-              <li class="flex items-start gap-2 text-sm text-zinc-300">
-                <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
-                {f}
-              </li>
-            ))}
-            {plan.excluded.map((f) => (
-              <li class="flex items-start gap-2 text-sm text-zinc-600">
-                <span class="mt-0.5 shrink-0">&#8722;</span>
-                {f}
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href={plan.ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            class={`text-center font-semibold px-6 py-3 rounded-lg transition ${plan.highlight ? 'bg-amber-400 text-zinc-950 hover:bg-amber-300' : 'border border-zinc-700 text-zinc-200 hover:border-zinc-500'}`}
-          >
-            {plan.cta}
-          </a>
+          <p class="text-zinc-400 text-sm">Fork and configure it yourself.</p>
         </div>
-      ))}
+        <ul class="flex flex-col gap-3 mb-6 flex-1">
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Fork the vault template on GitHub
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Self-configure CLAUDE.md
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Community supported
+          </li>
+        </ul>
+        <a
+          href="https://github.com/sockshead/brainkit-starter"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-center font-semibold px-6 py-3 rounded-lg transition border border-zinc-700 text-zinc-200 hover:border-zinc-500"
+        >
+          View on GitHub &rarr;
+        </a>
+      </div>
+
+      <!-- Kickstart -->
+      <div class="relative bg-zinc-900 rounded-xl p-6 flex flex-col border border-zinc-800">
+        <div class="mb-6">
+          <h3 class="text-zinc-100 font-semibold text-lg mb-2">Kickstart</h3>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="font-display text-4xl font-bold text-zinc-100">${INTRO_PRICE}</span>
+            <span class="text-zinc-400 text-sm">one-time</span>
+          </div>
+          <p class="text-zinc-500 text-xs mb-2">
+            <span class="line-through">${REGULAR_PRICE}</span> for first 3 clients
+          </p>
+          <p class="text-zinc-400 text-sm">Johannes configures your setup. You own it after.</p>
+        </div>
+        <ul class="flex flex-col gap-3 mb-6 flex-1">
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            CLAUDE.md written from intake form
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            60-min onboarding call
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            You own it — no retainer required
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-600">
+            <span class="mt-0.5 shrink-0">&#8722;</span>
+            No voice pipeline
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-600">
+            <span class="mt-0.5 shrink-0">&#8722;</span>
+            No monthly maintenance
+          </li>
+        </ul>
+        <a
+          href={`https://cal.com/${CAL_LINK}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-center font-semibold px-6 py-3 rounded-lg transition border border-zinc-700 text-zinc-200 hover:border-zinc-500"
+        >
+          Get started &rarr;
+        </a>
+      </div>
+
+      <!-- Concierge (highlighted) -->
+      <div class="relative bg-zinc-900 rounded-xl py-10 px-6 flex flex-col border border-amber-400 shadow-[0_0_30px_rgba(251,191,36,0.15)]">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="bg-amber-400 text-zinc-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Most popular
+          </span>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-zinc-100 font-semibold text-lg mb-2">Concierge</h3>
+          <div class="flex items-baseline gap-2 mb-2">
+            <span class="font-display text-4xl font-bold text-zinc-100">$247</span>
+            <span class="text-zinc-400 text-sm">/mo</span>
+          </div>
+          <p class="text-zinc-400 text-sm">Full setup + monthly maintenance. Min 3 months.</p>
+        </div>
+        <ul class="flex flex-col gap-3 mb-6 flex-1">
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Full setup included in month 1
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Monthly: CLAUDE.md audit + Brain Report + upgrades
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Voice-to-vault (Telegram) from month 2
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Private git backup
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Cancel with 30-day notice
+          </li>
+        </ul>
+        <a
+          href={`https://cal.com/${CAL_LINK}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-center font-semibold px-6 py-3 rounded-lg transition bg-amber-400 text-zinc-950 hover:bg-amber-300"
+        >
+          Book a call &rarr;
+        </a>
+      </div>
+
+      <!-- Full Stack -->
+      <div class="relative bg-zinc-900 rounded-xl p-6 flex flex-col border border-zinc-800">
+        <div class="mb-6">
+          <h3 class="text-zinc-100 font-semibold text-lg mb-2">Full Stack</h3>
+          <div class="flex items-baseline gap-2 mb-2">
+            <span class="font-display text-4xl font-bold text-zinc-100">$497</span>
+            <span class="text-zinc-400 text-sm">+ $247/mo</span>
+          </div>
+          <p class="text-zinc-400 text-sm">Everything on day 1. 3 months Concierge included.</p>
+        </div>
+        <ul class="flex flex-col gap-3 mb-6 flex-1">
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Voice pipeline set up in month 1
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            3 months Concierge included
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            Everything in Concierge
+          </li>
+          <li class="flex items-start gap-2 text-sm text-zinc-300">
+            <span class="text-amber-400 mt-0.5 shrink-0">&#10003;</span>
+            For clients who want everything on day 1
+          </li>
+        </ul>
+        <a
+          href={`https://cal.com/${CAL_LINK}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-center font-semibold px-6 py-3 rounded-lg transition border border-zinc-700 text-zinc-200 hover:border-zinc-500"
+        >
+          Book a call &rarr;
+        </a>
+      </div>
+
     </div>
 
-    <p class="text-center text-zinc-500 text-sm">
-      All plans include a 30-day no-questions-asked refund if setup doesn't go smoothly.
+    <p class="text-center text-zinc-400 text-sm max-w-xl mx-auto">
+      Every plan starts with a discovery call. 20 minutes to understand your workflow before we build anything.
     </p>
   </div>
 </section>
