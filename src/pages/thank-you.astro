@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CAL_SETUP_LINK, TALLY_FORM_ID } from '../config/site';
+---
+
+<Layout
+  title="You're in — BrainKit"
+  description="Your BrainKit setup has started. Complete the intake form so Johannes can build your system."
+>
+  <main class="min-h-screen flex flex-col items-center justify-center px-4 py-24 text-center">
+    <div class="max-w-xl mx-auto">
+
+      <!-- Confirmation -->
+      <div class="w-14 h-14 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center mx-auto mb-8">
+        <svg class="w-7 h-7 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-zinc-100 mb-4">
+        Payment received. Let's build your system.
+      </h1>
+
+      <p class="text-zinc-400 mb-10 leading-relaxed">
+        Johannes will reach out within 24 hours. To get started faster, fill in the intake form below — it takes 5 minutes and means your CLAUDE.md is already being drafted before the call.
+      </p>
+
+      <!-- Step 1: Intake form -->
+      <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 mb-6 text-left">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-7 h-7 rounded-full bg-amber-400 text-zinc-950 font-bold text-sm flex items-center justify-center shrink-0">1</span>
+          <h2 class="text-zinc-100 font-semibold">Fill in your intake form</h2>
+        </div>
+        <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+          Your projects, your clients, how you currently work. This is how Johannes builds a CLAUDE.md that's actually about you — not a template.
+        </p>
+
+        {TALLY_FORM_ID ? (
+          <!-- Tally embed loads when TALLY_FORM_ID is set -->
+          <div data-tally-src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1`} data-tally-overlay="0" class="w-full min-h-[400px]"></div>
+          <script async src="https://tally.so/widgets/embed.js"></script>
+        ) : (
+          <!-- Fallback: email until Tally is configured -->
+          <a
+            href="mailto:johannes@brainkit.so?subject=BrainKit%20Intake%20Form&body=Hi%20Johannes%2C%0A%0AI%20just%20purchased%20BrainKit%20Kickstart.%20Here%27s%20my%20context%3A%0A%0AName%3A%0AWhat%20I%20do%3A%0AMy%20main%20projects%20right%20now%3A%0AClients%20or%20people%20I%20track%3A%0AWhat%20I%20want%20Claude%20to%20know%20about%20me%3A%0A"
+            class="inline-flex items-center gap-2 bg-amber-400 text-zinc-950 font-semibold px-6 py-3 rounded-lg hover:bg-amber-300 transition-colors text-sm"
+          >
+            Send intake info by email &rarr;
+          </a>
+        )}
+      </div>
+
+      <!-- Step 2: Book setup call -->
+      <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 text-left">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-7 h-7 rounded-full bg-zinc-700 text-zinc-300 font-bold text-sm flex items-center justify-center shrink-0">2</span>
+          <h2 class="text-zinc-100 font-semibold">Book your 60-min setup call</h2>
+        </div>
+        <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+          Johannes walks through your vault, installs the system, and makes sure it's working before the call ends. Pick a time that works for you.
+        </p>
+        <a
+          href={`https://cal.com/${CAL_SETUP_LINK}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 border border-zinc-700 text-zinc-200 font-semibold px-6 py-3 rounded-lg hover:border-zinc-500 transition-colors text-sm"
+        >
+          Pick a time &rarr;
+        </a>
+        <p class="text-zinc-600 text-xs mt-3">Can't find a slot? Email <a href="mailto:johannes@brainkit.so" class="underline hover:text-zinc-400">johannes@brainkit.so</a> and we'll sort it out.</p>
+      </div>
+
+      <!-- Reassurance -->
+      <p class="text-zinc-600 text-xs mt-8">
+        Check your email for the Stripe receipt. Questions? <a href="mailto:johannes@brainkit.so" class="underline hover:text-zinc-400">johannes@brainkit.so</a>
+      </p>
+
+    </div>
+  </main>
+</Layout>
