@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { DELIVERY_URL } from '../config/site';
 ---
 
 <Layout
@@ -264,7 +265,7 @@ import Layout from '../layouts/Layout.astro';
   }
 </style>
 
-<script>
+<script define:vars={{ deliveryUrl: DELIVERY_URL }}>
   const STEPS = 3;
   let currentStep = 1;
   const toggleState: Record<string, boolean> = {
@@ -398,7 +399,7 @@ import Layout from '../layouts/Layout.astro';
     };
 
     try {
-      const res = await fetch('/webhook/intake', {
+      const res = await fetch(`${deliveryUrl}/webhook/intake`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

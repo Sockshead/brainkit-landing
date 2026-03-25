@@ -38,6 +38,16 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Deployment
+
+### Environment variables
+
+| Variable | Required in prod | Description |
+| :----------------------- | :--------------- | :----------------------------------------------- |
+| `PUBLIC_DELIVERY_URL` | Yes | Base URL of the BrainKit delivery server (e.g. `https://delivery.brainkit.so`). The intake form POSTs to `$PUBLIC_DELIVERY_URL/webhook/intake`. Defaults to `http://localhost:3000` for local dev. |
+
+On the delivery server side, set `LANDING_ORIGIN=https://brainkit.so` so the CORS header allows requests from the landing site.
+
+## Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
